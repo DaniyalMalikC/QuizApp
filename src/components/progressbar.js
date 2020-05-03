@@ -48,9 +48,9 @@ export class SuccessBar extends Component {
     setTimeout(() => {
       const { correct, attempt, remain } = this.props;
 
-      const rightPercent = ((correct + remain) * 100) / 20;
-      const wrongPercent = 100 - (correct * 100) / 20;
-      const successPercent = (correct * 100) / attempt;
+      const rightPercent = (((correct + remain) * 100) / 20).toFixed(2);
+      const wrongPercent = (100 - (correct * 100) / 20).toFixed(2);
+      const successPercent = ((correct * 100) / attempt).toFixed(2);
 
       const newStyleSuc = {
         opacity: 1,
@@ -78,9 +78,16 @@ export class SuccessBar extends Component {
       });
     }, 2000);
     const { styleSuc, styleRig, styleWro, done, right, wrong } = this.state;
-    const { success } = this.props;
     return (
       <div>
+        <div className="scoreboard">
+          <p className="score" style={{ float: "left" }}>
+            Your Score: {done}
+          </p>
+          <p className="score" style={{ float: "right" }}>
+            Max Score: {right}
+          </p>
+        </div>
         <div className="bar">
           <div className="progress-right" style={styleRig}>
             <p>{right}%</p>
