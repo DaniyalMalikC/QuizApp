@@ -11,5 +11,5 @@ encrypt.setPublicKey(pubkey);
 var encrypted = encrypt.encrypt(input);
 
 console.log("Your Name Encrypted form" + encrypted);
-
+//
 export default encrypted;
