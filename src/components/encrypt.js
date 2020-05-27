@@ -16,5 +16,5 @@ var encrypted = encrypt.encrypt(input);
 //Showing Result on Console
 console.log("Your Name Encrypted form -> " + encrypted);
 
-//Export
+//Exporting
 export default encrypted;
