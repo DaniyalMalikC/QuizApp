@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import Name from "./../components/decrypt";
+
 import ques from "../components/json/questions.json";
 
 import { ProgressBar, SuccessBar } from "../components/progressbar";
@@ -22,6 +24,8 @@ export default class questions extends Component {
       progress: 0,
       total: 20,
       attempt: 0,
+      msg: "",
+      msgStyle: null,
     };
   }
 
@@ -35,6 +39,19 @@ export default class questions extends Component {
               background: "#145A32",
               color: "#fff",
               border: "#145A32",
+              pointerEvents: "none",
+              cursor: "default",
+            },
+            unsuccess: {
+              pointerEvents: "none",
+              cursor: "default",
+            },
+            msg: "Correct Answer",
+            msgStyle: {
+              background: "#0D4000",
+              color: "#fff",
+              border: "#0D4000",
+              visibility: "visible",
             },
             correct: ++this.state.correct,
             attempt: ++this.state.attempt,
@@ -46,11 +63,22 @@ export default class questions extends Component {
               background: "#145A32",
               color: "#fff",
               border: "#145A32",
+              pointerEvents: "none",
+              cursor: "default",
             },
             unsuccess: {
               background: "#A93226",
               color: "#fff",
               border: "#A93226",
+              pointerEvents: "none",
+              cursor: "default",
+            },
+            msg: "Wrong Answer",
+            msgStyle: {
+              background: "#4D0700",
+              color: "#fff",
+              border: "#4D0700",
+              visibility: "visible",
             },
             wrong: ++this.state.wrong,
             attempt: ++this.state.attempt,
@@ -72,6 +100,8 @@ export default class questions extends Component {
         unsuccess: null,
         rightAns: "",
         progress: this.state.progress + 5,
+        msg: "",
+        msgStyle: null,
       });
     };
 
@@ -86,6 +116,8 @@ export default class questions extends Component {
       remain,
       correct,
       wrong,
+      msg,
+      msgStyle,
     } = this.state;
 
     return (
@@ -132,6 +164,9 @@ export default class questions extends Component {
                   </div>
                   <div className="option">
                     <button
+                      ref={(btn) => {
+                        this.btn = btn;
+                      }}
                       value={data.correct_answer}
                       onClick={(e) => handleAns(e, data.correct_answer)}
                       style={success}
@@ -141,6 +176,9 @@ export default class questions extends Component {
                     {data.incorrect_answers.map((opt) => {
                       return (
                         <button
+                          ref={(btn) => {
+                            this.btn = btn;
+                          }}
                           key={opt}
                           value={opt}
                           onClick={(e) => handleAns(e, data.correct_answer)}
@@ -154,11 +192,17 @@ export default class questions extends Component {
                 </div>
                 <div className="option">
                   <button
-                    style={{ backgroundColor: "#dec664" }}
+                    style={{
+                      backgroundColor: "#dec664",
+                      float: "right",
+                    }}
                     onClick={() => handleNext()}
                   >
                     Next
                   </button>
+                  <p className="msg" style={msgStyle}>
+                    {msg}
+                  </p>
                 </div>
               </div>
             );
@@ -167,7 +211,7 @@ export default class questions extends Component {
         {progress === 100 ? (
           <div className="quizPanel">
             <h2>
-              Total Questions are {total}. You attempt {attempt} Questions in
+              Total Questions are {total}. {Name} attempt {attempt} Questions in
               which {correct} were right and {wrong} were wrong answers.
             </h2>
           </div>

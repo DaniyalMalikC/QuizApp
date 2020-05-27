@@ -1,68 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# DM 103348: Quiz App
 
-## Available Scripts
+###PROJECT MEMBERS
+StdID | Name
+----- | -------------
+**64262** | **M. Daniyal Malik** <!--this is the group leader in bold-->
+64254 | Riyan Shahid (Class Id: 103347)
+64290 | Ubaid Ullah
 
-In the project directory, you can run:
+## Project Description
+We build Quiz App for Entertainment and Education purpose. This app contain beautiful User Interface, Experience (UI & UX) and interesting Questions.
 
-### `npm start`
+## Discrete Math Concepts Used
+We use RSA for Encryption and Decryption process as we know in this kind of app we have to use strong backend but if somehow anybody break into our backend, they will not find data in decrypted form and all there struggle become a waste of time. We applied RSA in Options and Answer so that if user hack into our Database they will not get answers of question. For demonstration we showed Your Name encryption and decryption in console you can check blow in Demo Images.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Example 1: Replace with Your Own
+And you may also add code samples from your project to support your description. 
+``` React JS ( open-source JavaScript library for building user interface for Website ).
+import React from "react"; /*Importing React JS functionality*/
+import "./App.css"; /*Importing Styling*/
+import Questions from "./screen/Questions"; /*Importing Our Program*/
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+function App() {
+  return (
+    <div className="App">
+      <Questions />
+    </div>
+  );
+}
+export default App;/*Exporting it for User*/
+```
+```
+// Encrypt with the public key...
+var encrypt = new JSEncrypt();
+encrypt.setPublicKey(pubkey);
+var encrypted = encrypt.encrypt(input);
 
-### `npm test`
+// Decrypt with the private key...
+var decrypt = new JSEncrypt();
+decrypt.setPrivateKey(privkey);
+var uncrypted = decrypt.decrypt(encrypted);
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Problems Faced
+How to use RSA in JavaScript
 
-### `npm run build`
+### Problem 1: Confused while coding RSA and its functionality in JavaScript ###
+It was an easy task for us we can use Open-Source Library for RSA but we didn't utilized them. Instead of them we code on our own so that we can demonstrate our Project. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## References
+- [links](https://github.com/Rizwanjamal/React-Test).
+- [links](https://github.com/travist/jsencrypt).
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Demo Images
+![Name Input](./src/assets/1st - Name Input.png)
+![Console Encryption & Decryption](./src/assets/2nd - Console Encryption & Decryption.png)
+![Quiz Screen](./src/assets/3rd - Quiz Screen.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Guide
+- At top shown Progress Bar.
+- At bottom shown Points Table with runtime progress.
+- In center Questions and options are shown.
+![Quiz Screen](./src/assets/3rd - Quiz Screen.png)
