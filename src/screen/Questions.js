@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import Name from "./../components/decrypt";
+
 import ques from "../components/json/questions.json";
 
 import { ProgressBar, SuccessBar } from "../components/progressbar";
@@ -209,7 +211,7 @@ export default class questions extends Component {
         {progress === 100 ? (
           <div className="quizPanel">
             <h2>
-              Total Questions are {total}. You attempt {attempt} Questions in
+              Total Questions are {total}. {Name} attempt {attempt} Questions in
               which {correct} were right and {wrong} were wrong answers.
             </h2>
           </div>
