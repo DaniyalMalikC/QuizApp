@@ -52,12 +52,12 @@ It was an easy task for us we can use Open-Source Library for RSA but we didn't 
 - [links](https://github.com/travist/jsencrypt).
 
 ## Demo Images
-![Name Input](./assets/1st - Name Input.png)
-![Console Encryption & Decryption](./assets/2nd - Console Encryption & Decryption.png)
-![Quiz Screen](./assets/3rd - Quiz Screen.png)
+![Name Input](./src/assets/1st-Name-Input.png)
+![Console Encryption & Decryption](./src/assets/2nd-Console-Encryption-&-Decryption.png)
+![Quiz Screen](./src/assets/3rd-Quiz-Screen.png)
 
 ## Guide
 - At top shown Progress Bar.
 - At bottom shown Points Table with runtime progress.
 - In center Questions and options are shown.
-![Quiz Screen](./assets/3rd - Quiz Screen.png)
+![Quiz Screen](./src/assets/3rd-Quiz-Screen.png)
